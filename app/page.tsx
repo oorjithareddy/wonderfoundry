@@ -62,7 +62,7 @@ export default function Home() {
           <div className="hero-note"><span className="note-star" aria-hidden="true">✳</span><span>Made from your imagination.<br /><strong>Not another off-the-shelf gift.</strong></span></div>
         </div>
 
-        <div className="hero-art" aria-label="An illustrated sample of a personal field guide booklet">
+        <div className="hero-art" role="img" aria-label="An illustrated sample of a personal field guide booklet">
           <div className="art-orbit orbit-one" aria-hidden="true" />
           <div className="art-orbit orbit-two" aria-hidden="true" />
           <div className="float-note float-note-top">A ONE-OF-ONE<br />KIND OF THING <span aria-hidden="true">↘</span></div>
