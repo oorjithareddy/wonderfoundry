@@ -42,7 +42,7 @@ npm run typecheck
 npm run build
 ```
 
-The homepage and creative workspace are front-end prototypes. They do not call an AI model, save designs to a database, or create orders. The print-aware model provides provisional working sizes, 300 DPI canvas estimates, brief/image checks, and a product-only burgundy theme profile. It does not create print-ready files: dimensions, bleed, colour, stock, binding and export templates must be verified with the selected vendor. Uploaded artwork is kept as reference material and is not automatically placed into products.
+The homepage and creative workspace are front-end prototypes. They do not call an AI model, save designs to a database, or create orders. The print-aware model provides provisional working sizes, 300 DPI canvas estimates, brief/image checks, and a product-only burgundy theme profile. A stateless POST endpoint at `/api/production/validate` returns these checks for a submitted draft; it does not store drafts or uploaded files. It does not create print-ready files: dimensions, bleed, colour, stock, binding and export templates must be verified with the selected vendor. Uploaded artwork is kept as reference material and is not automatically placed into products.
 
 ## Build sequence
 
