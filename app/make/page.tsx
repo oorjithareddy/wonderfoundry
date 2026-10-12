@@ -2,7 +2,6 @@
 
 import { useState, type ChangeEvent } from "react";
 import Link from "next/link";
-import { RetroSticker } from "@/components/retro-stickers";
 import "./workspace.css";
 
 type ProductFormat = "book" | "deck" | "poster";
@@ -30,8 +29,8 @@ const formats: { id: ProductFormat; name: string; detail: string; symbol: string
 
 const directions: { id: ArtDirection; name: string; note: string }[] = [
   { id: "archive", name: "The archive", note: "Warm, collected, considered" },
-  { id: "electric", name: "After Hours", note: "Black cherry, music posters, ink" },
-  { id: "dreamy", name: "Wild Botanical", note: "Faded florals, old paper, moss" },
+  { id: "electric", name: "Electric energy", note: "Bold, bright, a little loud" },
+  { id: "dreamy", name: "Soft surreal", note: "Dreamy, strange, otherworldly" },
 ];
 
 function Mockup({ draft, compact = false }: { draft: Draft; compact?: boolean }) {
@@ -167,11 +166,11 @@ export default function MakePage() {
             <h1>Start with a thought.<br /><span className="serif-accent">Make it a thing.</span></h1>
             <p className="workspace-lede">Shape the idea, choose its form, and see a little preview take shape. Nothing needs to be perfect yet.</p>
           </div>
-          <nav className="workspace-steps" aria-label="Creation steps">
+          <div className="workspace-steps" aria-label="Creation steps">
             <span className="workspace-step active"><b>01</b> IDEA</span>
             <span className="workspace-step active"><b>02</b> SHAPE</span>
             <span className="workspace-step"><b>03</b> MAKE REAL</span>
-          </nav>
+          </div>
         </div>
       </div>
 
@@ -188,7 +187,7 @@ export default function MakePage() {
           <div className="editor-divider" />
 
           <div className="panel-heading"><span className="panel-index">02</span><div><p>GIVE IT A FORM</p><h2>What could it become?</h2></div></div>
-          <fieldset className="format-options" aria-label="Choose a product format">
+          <div className="format-options" role="group" aria-label="Choose a product format">
             {formats.map((format) => (
               <button key={format.id} type="button" className={`format-option ${product === format.id ? "selected" : ""}`} onClick={() => setProduct(format.id)} aria-pressed={product === format.id}>
                 <span className={`format-symbol symbol-${format.id}`} aria-hidden="true">{format.symbol}</span>
@@ -196,12 +195,12 @@ export default function MakePage() {
                 <span className="option-check" aria-hidden="true">{product === format.id ? "✓" : "+"}</span>
               </button>
             ))}
-          </fieldset>
+          </div>
 
           <div className="editor-divider" />
 
           <div className="panel-heading"><span className="panel-index">03</span><div><p>SET THE FEELING</p><h2>Choose a direction.</h2></div></div>
-          <fieldset className="direction-options" aria-label="Choose a visual direction">
+          <div className="direction-options" role="group" aria-label="Choose a visual direction">
             {directions.map((item) => (
               <button key={item.id} type="button" className={`direction-pick ${direction === item.id ? "selected" : ""}`} onClick={() => setDirection(item.id)} aria-pressed={direction === item.id}>
                 <span className={`direction-swatch swatch-${item.id}`} aria-hidden="true"><i /><i /><i /></span>
@@ -209,7 +208,7 @@ export default function MakePage() {
                 <span className="option-check" aria-hidden="true">{direction === item.id ? "✓" : "+"}</span>
               </button>
             ))}
-          </fieldset>
+          </div>
 
           <div className="editor-divider" />
 
@@ -244,7 +243,7 @@ export default function MakePage() {
         <aside className="preview-column" aria-label="Live design preview and versions">
           <div className="preview-panel">
             <div className="preview-header"><div><p>THE FIRST LOOK</p><h2>In progress<span>.</span></h2></div><span className="live-pill"><i /> LIVE PREVIEW</span></div>
-            <div className="preview-stage"><div className="stage-sticker-cloud" aria-hidden="true"><RetroSticker kind="cherries" className="stage-sticker stage-sticker-cherries" /><RetroSticker kind="butterfly" className="stage-sticker stage-sticker-butterfly" /><RetroSticker kind="cassette" className="stage-sticker stage-sticker-cassette" /><RetroSticker kind="star" className="stage-sticker stage-sticker-star" /></div>
+            <div className="preview-stage">
               <div className="stage-ring stage-ring-one" aria-hidden="true" />
               <div className="stage-ring stage-ring-two" aria-hidden="true" />
               <Mockup draft={draft} />
