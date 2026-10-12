@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { IdeaLauncher } from "@/components/idea-launcher";
 
 const posters = [
@@ -70,8 +71,8 @@ export default function Home() {
           {menuOpen ? "CLOSE −" : "MENU +"}
         </button>
         <nav className={`wf-nav ${menuOpen ? "is-open" : ""}`} id="wf-navigation" aria-label="Main navigation">
-          <a href="#archive" onClick={() => setMenuOpen(false)}>The archive</a>
-          <a href="#how-it-works" onClick={() => setMenuOpen(false)}>How it works</a>
+          <a href="#archive">The archive</a>
+          <a href="#how-it-works">How it works</a>
           <a className="wf-nav-cta" href="/make">Make a little something <span aria-hidden="true">↗</span></a>
         </nav>
       </header>
@@ -92,17 +93,17 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="wf-art-wall" aria-label="A wall of original poster artwork">
+        <div className="wf-art-wall" role="group" aria-label="A wall of original poster artwork">
           <div className="wf-wall-label wall-label-top">AN EXHIBITION OF VERY SPECIFIC THINGS</div>
           <figure className="wf-wall-print wf-wall-print-main">
-            <img src="/art/odd-things.svg" width="600" height="800" alt="Original poster: Odd things for good people, with burgundy typography and botanical artwork" />
+            <Image src="/art/odd-things.svg" width={600} height={800} alt="Original poster: Odd things for good people, with burgundy typography and botanical artwork" priority />
             <figcaption>01 / THE PEOPLE ARCHIVE</figcaption>
           </figure>
           <figure className="wf-wall-print wf-wall-print-record">
-            <img src="/art/side-a.svg" width="600" height="800" alt="Original burgundy music poster featuring a vinyl record" />
+            <Image src="/art/side-a.svg" width={600} height={800} alt="Original burgundy music poster featuring a vinyl record" />
           </figure>
           <figure className="wf-wall-print wf-wall-print-flower">
-            <img src="/art/wild-bloom.svg" width="600" height="800" alt="Original botanical illustration with a deep red flower and vintage pattern" />
+            <Image src="/art/wild-bloom.svg" width={600} height={800} alt="Original botanical illustration with a deep red flower and vintage pattern" />
           </figure>
           <span className="wf-wall-sticker sticker-one">YOUR LORE<br />LOOKS GOOD.</span>
           <span className="wf-wall-sticker sticker-two">NOT FOR<br />EVERYBODY ✳</span>
@@ -110,7 +111,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="wf-marquee" aria-label="Creative possibilities">
+      <div className="wf-marquee" aria-hidden="true">
         <div className="wf-marquee-track" aria-hidden="true">
           {["A LITTLE LORE", "A LOT OF PERSONALITY", "PRINTED FOR KEEPS", "THE WEIRD BITS ARE THE GOOD BITS"].map((phrase) => (
             <span className="wf-marquee-item" key={phrase}>{phrase}<b>✳</b></span>
@@ -135,7 +136,7 @@ export default function Home() {
             <article className={poster.className} key={poster.id}>
               <div className="wf-print-metadata"><span>WF / {poster.number}</span><span>{poster.format}</span></div>
               <a href="/make" className="wf-print-art" aria-label={`Start creating: ${poster.title}`}>
-                <img src={poster.image} alt={poster.alt} width="600" height="800" loading="lazy" />
+                <Image src={poster.image} alt={poster.alt} width={600} height={800} loading="lazy" />
                 <span className="wf-print-open" aria-hidden="true">↗</span>
               </a>
               <div className="wf-print-copy">
