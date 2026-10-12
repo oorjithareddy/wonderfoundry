@@ -2,7 +2,7 @@
 
 import { useState, type ChangeEvent } from "react";
 import Link from "next/link";
-import { RetroSticker } from "@/components/retro-stickers";
+import { ReferenceSticker } from "@/components/reference-stickers";
 import "./workspace.css";
 
 type ProductFormat = "book" | "deck" | "poster";
@@ -244,7 +244,7 @@ export default function MakePage() {
         <aside className="preview-column" aria-label="Live design preview and versions">
           <div className="preview-panel">
             <div className="preview-header"><div><p>THE FIRST LOOK</p><h2>In progress<span>.</span></h2></div><span className="live-pill"><i /> LIVE PREVIEW</span></div>
-            <div className="preview-stage"><div className="stage-sticker-cloud" aria-hidden="true"><RetroSticker kind="cherries" className="stage-sticker stage-sticker-cherries" /><RetroSticker kind="butterfly" className="stage-sticker stage-sticker-butterfly" /><RetroSticker kind="cassette" className="stage-sticker stage-sticker-cassette" /><RetroSticker kind="star" className="stage-sticker stage-sticker-star" /></div>
+            <div className="preview-stage"><div className="stage-sticker-cloud" aria-hidden="true"><ReferenceSticker kind="leopard-cherries" className="stage-sticker stage-sticker-cherries" /><ReferenceSticker kind="rose-bouquet" className="stage-sticker stage-sticker-butterfly" /><ReferenceSticker kind="headphones" className="stage-sticker stage-sticker-cassette" /><ReferenceSticker kind="seal" className="stage-sticker stage-sticker-star" /></div>
               <div className="stage-ring stage-ring-one" aria-hidden="true" />
               <div className="stage-ring stage-ring-two" aria-hidden="true" />
               <Mockup draft={draft} />

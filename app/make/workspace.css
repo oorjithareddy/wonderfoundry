@@ -456,3 +456,16 @@
 .workspace-shell .versions-empty,.workspace-shell .version-tile,.workspace-shell .compare-grid>div{color:#F2E7D8;background:#47262B;border-color:rgba(242,231,216,.2)}.workspace-shell .versions-empty p{color:#D5BDB1}.workspace-shell .versions-empty strong{color:#F2E7D8}.workspace-shell .version-tile-art,.workspace-shell .compare-grid .mockup-compact{background:#241417}.workspace-shell .version-tile-meta,.workspace-shell .compare-grid small,.workspace-shell .versions-disclaimer{color:#C6A99B}.workspace-shell .version-tile .quiet-button{color:#F2E7D8}
 .workspace-shell .workspace-footer{color:#F2E7D8;border-top-color:rgba(242,231,216,.22);background:#35171C}.workspace-shell .workspace-footer .workspace-brand{color:#F2E7D8}.workspace-shell .workspace-footer>span{color:#C6A99B}.workspace-shell .workspace-footer>a:last-child{color:#F2E7D8}
 @media(max-width:780px){.workspace-shell .workspace-topbar{background:#35171C}.workspace-shell .editor-panel,.workspace-shell .preview-panel,.workspace-shell .versions-panel{padding:17px}.workspace-shell .stage-sticker-cherries{width:13%}.workspace-shell .stage-sticker-butterfly{width:12%}}
+
+/* Replace the original icon illustrations with the supplied image cut-outs. */
+.workspace-shell .reference-sticker {
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-size: 500% 100%;
+}
+.workspace-shell .reference-sticker-photo {
+  background-size: contain;
+  background-position: center 58%;
+  border: 1px solid rgba(211,178,127,.42);
+}
