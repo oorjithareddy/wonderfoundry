@@ -93,7 +93,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="wf-art-wall" role="group" aria-label="A wall of original poster artwork">
+        <section className="wf-art-wall" aria-label="A wall of original poster artwork">
           <div className="wf-wall-label wall-label-top">AN EXHIBITION OF VERY SPECIFIC THINGS</div>
           <figure className="wf-wall-print wf-wall-print-main">
             <Image src="/art/odd-things.svg" width={600} height={800} alt="Original poster: Odd things for good people, with burgundy typography and botanical artwork" priority />
@@ -108,7 +108,7 @@ export default function Home() {
           <span className="wf-wall-sticker sticker-one">YOUR LORE<br />LOOKS GOOD.</span>
           <span className="wf-wall-sticker sticker-two">NOT FOR<br />EVERYBODY ✳</span>
           <span className="wf-wall-catalogue">WONDERFOUNDRY<br />COLLECTORS' DEPT. / A</span>
-        </div>
+        </section>
       </section>
 
       <div className="wf-marquee" aria-hidden="true">
