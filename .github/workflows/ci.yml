@@ -26,6 +26,8 @@ jobs:
         run: |
           npm audit --json > npm-audit.json || true
           node -e 'const a = require("./npm-audit.json"); console.log("Audit counts:", JSON.stringify(a.metadata?.vulnerabilities ?? {})); for (const [name, v] of Object.entries(a.vulnerabilities ?? {})) console.log(JSON.stringify({name, severity: v.severity, direct: v.isDirect, fixAvailable: v.fixAvailable, via: v.via.map(x => typeof x === "string" ? x : x.title)}));'
+      - name: Enforce no high-severity audit findings
+        run: npm audit --audit-level=high
       - name: Lint
         run: npm run lint
       - name: Type-check
