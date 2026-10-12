@@ -78,10 +78,10 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="ticker" aria-label="Creative possibilities">
+      <div className="ticker">
         <div className="ticker-track" aria-hidden="true">
-          {Array.from({ length: 2 }).map((_, index) => (
-            <span className="ticker-set" key={index}>GOOD IDEAS GET PHYSICAL <b>✳</b> MEMORIES, BUT MAKE THEM OBJECTS <b>✳</b> WEIRDLY SPECIFIC IS THE POINT <b>✳</b> ONE IDEA, A HUNDRED DIRECTIONS <b>✳</b> </span>
+          {["first", "second"].map((copy) => (
+            <span className="ticker-set" key={copy}>GOOD IDEAS GET PHYSICAL <b>✳</b> MEMORIES, BUT MAKE THEM OBJECTS <b>✳</b> WEIRDLY SPECIFIC IS THE POINT <b>✳</b> ONE IDEA, A HUNDRED DIRECTIONS <b>✳</b> </span>
           ))}
         </div>
       </div>

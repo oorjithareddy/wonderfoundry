@@ -21,7 +21,7 @@ function getDirections(idea: string): Direction[] {
       id: "field-guide",
       title: aboutPet ? "The Pet Field Guide" : "The Field Guide",
       label: "MINI BOOK",
-      description: "A tiny guide to " + subject + ": habits, lore, quotes and extremely scientific observations.",
+      description: `A tiny guide to ${subject}: habits, lore, quotes and extremely scientific observations.`,
       icon: "▤",
     },
     {
