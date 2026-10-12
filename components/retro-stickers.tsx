@@ -86,5 +86,5 @@ const art: Record<RetroStickerKind, ReactNode> = {
 };
 
 export function RetroSticker({kind,className="",style}:{kind:RetroStickerKind;className?:string;style?:CSSProperties}) {
-  return <span className={"wf-sticker "+className} style={style} aria-hidden="true"><svg viewBox={boxes[kind]} width="100%" height="100%" focusable="false">{art[kind]}</svg></span>;
+  return <span className={`wf-sticker ${className}`} style={style} aria-hidden="true"><svg viewBox={boxes[kind]} width="100%" height="100%" focusable="false"><title>{kind + " retro sticker illustration"}</title>{art[kind]}</svg></span>;
 }
