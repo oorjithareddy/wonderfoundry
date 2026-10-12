@@ -29,8 +29,8 @@ const formats: { id: ProductFormat; name: string; detail: string; symbol: string
 
 const directions: { id: ArtDirection; name: string; note: string }[] = [
   { id: "archive", name: "The archive", note: "Warm, collected, considered" },
-  { id: "electric", name: "Electric energy", note: "Bold, bright, a little loud" },
-  { id: "dreamy", name: "Soft surreal", note: "Dreamy, strange, otherworldly" },
+  { id: "electric", name: "After Hours", note: "Black cherry, music posters, ink" },
+  { id: "dreamy", name: "Wild Botanical", note: "Faded florals, old paper, moss" },
 ];
 
 function Mockup({ draft, compact = false }: { draft: Draft; compact?: boolean }) {

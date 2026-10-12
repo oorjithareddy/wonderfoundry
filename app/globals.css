@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f5f0e8;
-  --paper-deep: #e9e1d5;
-  --ink: #1f211e;
-  --muted: #686961;
-  --line: rgba(31, 33, 30, 0.18);
-  --lime: #d7f36a;
-  --blue: #4b69ed;
-  --coral: #ef6b52;
-  --lilac: #c9b9f3;
-  --butter: #f5d96f;
-  --serif: Georgia, "Times New Roman", serif;
+  --paper: #F1E7D9;
+  --paper-deep: #DFCCB7;
+  --ink: #261718;
+  --muted: #76635F;
+  --line: rgba(54, 24, 27, 0.19);
+  --lime: #B6A06B;
+  --blue: #59303A;
+  --coral: #782631;
+  --lilac: #C5A29D;
+  --butter: #D2B991;
+  --serif: "Bodoni MT", Didot, Georgia, "Times New Roman", serif;
   --sans: Arial, Helvetica, sans-serif;
 }
 
@@ -23,7 +23,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+body { margin: 0; background: var(--paper); background-image: radial-gradient(rgba(65, 31, 30, 0.045) 0.55px, transparent 0.8px), linear-gradient(135deg, rgba(255,255,255,0.12), transparent 55%); background-size: 8px 8px, 100% 100%; color: var(--ink); font-family: var(--sans); }
 a { color: inherit; text-decoration: none; }
 button, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -274,4 +274,121 @@ button:focus-visible, a:focus-visible, textarea:focus-visible { outline: 3px sol
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+
+/* Wonderfoundry art direction: after-hours print archive.
+   Borrow the energy of editorial posters and ephemera, not any site's individual layout. */
+.announcement { background: #35171c; }
+.brand-mark { background: var(--coral); color: var(--paper); }
+.header-cta:hover { background: #35171c; }
+.hero-art::before { background: radial-gradient(circle at 40% 35%, #D0ABA5 0 10%, #B98885 72%); }
+.sample-book {
+  background-color: #D9C4A0;
+  background-image: repeating-linear-gradient(0deg, rgba(63, 28, 28, 0.025) 0 1px, transparent 1px 4px);
+  box-shadow: 11px 11px 0 rgba(38, 23, 24, 0.17);
+}
+.sample-book::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(63, 28, 28, 0.28);
+  pointer-events: none;
+}
+.book-sun {
+  background: var(--coral);
+  color: var(--paper);
+  box-shadow: inset 0 0 0 7px rgba(241, 231, 217, 0.16);
+}
+.book-sun span { color: #D8BE8F; }
+.book-bottom { border-color: rgba(63, 28, 28, 0.4); }
+.float-note { box-shadow: 3px 3px 0 #35171c; }
+.ticker { background: #D7C4A7; border-color: #35171c; }
+.ticker-set b { color: var(--coral); }
+.highlight-word::before { background: #C5A36D; }
+.scribble { color: #8B4650; }
+
+.creation-card.paper { background: #E5D7C4; }
+.creation-card.merlot {
+  color: #F1E7D9;
+  background: #55232B;
+}
+.creation-card.merlot .creation-description { color: #D9C6B9; }
+.creation-card.merlot .creation-stamp { border-color: rgba(241, 231, 217, 0.55); }
+.creation-card.merlot .creation-category { color: #D2B991; }
+.creation-card.rose { background: #CFB4AA; }
+.creation-card:hover { box-shadow: 5px 5px 0 #35171c; }
+.field-guide {
+  background-color: #682730;
+  background-image: linear-gradient(145deg, rgba(255,255,255,0.05), transparent 48%);
+}
+.field-guide::before {
+  content: "";
+  position: absolute;
+  width: 166px;
+  aspect-ratio: 1;
+  right: -31px;
+  top: 43px;
+  border-radius: 50%;
+  opacity: 0.72;
+  transform: rotate(-18deg);
+  background: repeating-radial-gradient(circle, #31191B 0 1px, #8B4A4D 2px 4px, #32181D 5px 8px);
+}
+.mini-book-title { position: relative; z-index: 1; text-shadow: 1px 1px rgba(40, 12, 18, 0.24); }
+.mini-book-burst { color: #D9C19A; z-index: 2; }
+.card-deck {
+  background-color: #6C2A34;
+  background-image:
+    radial-gradient(ellipse 7px 11px at 8px 9px, #231619 0 42%, transparent 49%),
+    radial-gradient(ellipse 7px 10px at 24px 24px, #251719 0 40%, transparent 48%),
+    radial-gradient(ellipse 3px 5px at 8px 9px, #C4A47C 0 68%, transparent 78%),
+    radial-gradient(ellipse 3px 4px at 24px 24px, #C4A47C 0 68%, transparent 78%);
+  background-size: 36px 36px;
+}
+.deck-back { background: #C9B18B; color: #291719; }
+.deck-doodle { color: #D0B991; }
+.imaginary {
+  background: #32191E;
+  color: #F1E7D9;
+}
+.imaginary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.52;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 50% 50%, #D1B18C 0 4px, transparent 4.8px),
+    radial-gradient(ellipse 13px 23px at 50% 28%, #A5676A 0 60%, transparent 64%),
+    radial-gradient(ellipse 13px 23px at 72% 42%, #8D4C55 0 60%, transparent 64%),
+    radial-gradient(ellipse 13px 23px at 63% 70%, #A5676A 0 60%, transparent 64%),
+    radial-gradient(ellipse 13px 23px at 37% 70%, #8D4C55 0 60%, transparent 64%),
+    radial-gradient(ellipse 13px 23px at 28% 42%, #A5676A 0 60%, transparent 64%);
+  background-size: 154px 154px;
+}
+.imaginary-title { z-index: 2; text-shadow: 1px 2px rgba(27, 8, 12, 0.25); }
+.imaginary-sun { background: #9A656B; opacity: 0.82; }
+.imaginary-orbit { z-index: 1; border-color: #D2B991; }
+.imaginary-star { color: #D2B991; }
+.creation-description { color: #5F4842; }
+.step-icon { background: #B8A06B; }
+.step-icon-blue { background: #A77A7D; }
+.step-icon-coral { background: #833541; color: #F1E7D9; }
+.idea-lab { background: #2C171A; }
+.idea-lab-copy .eyebrow { color: #D2B991; }
+.idea-lab h2 .serif-accent { color: #C49A97; }
+.button-lime { background: #C7AD7B; }
+.button-lime:hover:not(:disabled) { background: #A36C70; color: #fff7ec; }
+.direction-icon { background: #D2B991; }
+.direction-option:nth-child(2) .direction-icon { background: #C5A29D; }
+.direction-option:nth-child(3) .direction-icon { background: #8A4650; color: #F1E7D9; }
+.direction-option.is-selected { box-shadow: 3px 3px 0 #B6A06B; }
+.prototype-label .status-dot { background: #B6A06B; }
+.status-dot { background: #B6A06B; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .creation-art { transition: filter .25s ease; }
+  .creation-card:hover .creation-art { filter: saturate(1.08) contrast(1.025); }
+  .sample-book:hover { animation-play-state: paused; }
 }

@@ -8,7 +8,7 @@ const creations = [
     description: "Tiny details, legendary quotes, questionable habits. All the lore in one little book.",
     type: "field-guide",
     stamp: "YOU KNOW THE ONE",
-    colour: "butter",
+    colour: "paper",
   },
   {
     number: "02",
@@ -17,7 +17,7 @@ const creations = [
     description: "The bits of context that make absolutely no sense to anybody else.",
     type: "card-deck",
     stamp: "DEEP LORE",
-    colour: "blue",
+    colour: "merlot",
   },
   {
     number: "03",
@@ -26,7 +26,7 @@ const creations = [
     description: "Fake magazines, personal myths, strange posters and other very real ideas.",
     type: "imaginary",
     stamp: "NOT THAT SERIOUS",
-    colour: "coral",
+    colour: "rose",
   },
 ];
 
