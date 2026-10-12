@@ -166,11 +166,11 @@ export default function MakePage() {
             <h1>Start with a thought.<br /><span className="serif-accent">Make it a thing.</span></h1>
             <p className="workspace-lede">Shape the idea, choose its form, and see a little preview take shape. Nothing needs to be perfect yet.</p>
           </div>
-          <div className="workspace-steps" aria-label="Creation steps">
+          <nav className="workspace-steps" aria-label="Creation steps">
             <span className="workspace-step active"><b>01</b> IDEA</span>
             <span className="workspace-step active"><b>02</b> SHAPE</span>
             <span className="workspace-step"><b>03</b> MAKE REAL</span>
-          </div>
+          </nav>
         </div>
       </div>
 
@@ -187,7 +187,7 @@ export default function MakePage() {
           <div className="editor-divider" />
 
           <div className="panel-heading"><span className="panel-index">02</span><div><p>GIVE IT A FORM</p><h2>What could it become?</h2></div></div>
-          <div className="format-options" role="group" aria-label="Choose a product format">
+          <fieldset className="format-options" aria-label="Choose a product format">
             {formats.map((format) => (
               <button key={format.id} type="button" className={`format-option ${product === format.id ? "selected" : ""}`} onClick={() => setProduct(format.id)} aria-pressed={product === format.id}>
                 <span className={`format-symbol symbol-${format.id}`} aria-hidden="true">{format.symbol}</span>
@@ -195,12 +195,12 @@ export default function MakePage() {
                 <span className="option-check" aria-hidden="true">{product === format.id ? "✓" : "+"}</span>
               </button>
             ))}
-          </div>
+          </fieldset>
 
           <div className="editor-divider" />
 
           <div className="panel-heading"><span className="panel-index">03</span><div><p>SET THE FEELING</p><h2>Choose a direction.</h2></div></div>
-          <div className="direction-options" role="group" aria-label="Choose a visual direction">
+          <fieldset className="direction-options" aria-label="Choose a visual direction">
             {directions.map((item) => (
               <button key={item.id} type="button" className={`direction-pick ${direction === item.id ? "selected" : ""}`} onClick={() => setDirection(item.id)} aria-pressed={direction === item.id}>
                 <span className={`direction-swatch swatch-${item.id}`} aria-hidden="true"><i /><i /><i /></span>
@@ -208,7 +208,7 @@ export default function MakePage() {
                 <span className="option-check" aria-hidden="true">{direction === item.id ? "✓" : "+"}</span>
               </button>
             ))}
-          </div>
+          </fieldset>
 
           <div className="editor-divider" />
 

@@ -49,7 +49,7 @@
 .editor-field textarea::placeholder, .editor-field input::placeholder { color: #9b9b91; }
 .field-footnote { display: flex; justify-content: space-between; gap: 12px; margin-top: 7px; color: var(--workspace-muted); font-size: 8px; }
 .editor-divider { margin: 26px 0; border-top: 1px solid var(--workspace-line); }
-.format-options { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 9px; }
+.format-options { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 9px; margin: 0; padding: 0; border: 0; min-width: 0; }
 .format-option { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-height: 144px; padding: 12px 10px; border: 1px solid var(--workspace-line); text-align: left; background: rgba(255,255,255,.38); cursor: pointer; transition: border-color .18s ease, transform .18s ease, background .18s ease; }
 .format-option:hover { transform: translateY(-2px); border-color: var(--workspace-ink); }
 .format-option.selected { border-color: var(--workspace-ink); background: #fffdf8; box-shadow: 3px 3px 0 var(--workspace-lime); }
@@ -60,7 +60,7 @@
 .format-option small { max-width: 120px; color: var(--workspace-muted); font-size: 8px; line-height: 1.5; }
 .option-check { position: absolute; top: 10px; right: 10px; display: grid; place-items: center; width: 16px; height: 16px; border: 1px solid var(--workspace-line); border-radius: 50%; font-size: 9px; }
 .format-option.selected .option-check, .direction-pick.selected .option-check { background: var(--workspace-ink); color: white; border-color: var(--workspace-ink); }
-.direction-options { display: grid; gap: 8px; }
+.direction-options { display: grid; gap: 8px; margin: 0; padding: 0; border: 0; min-width: 0; }
 .direction-pick { position: relative; width: 100%; display: grid; grid-template-columns: 52px 1fr 18px; align-items: center; gap: 13px; padding: 11px; border: 1px solid var(--workspace-line); text-align: left; background: rgba(255,255,255,.38); cursor: pointer; transition: border-color .18s ease, background .18s ease; }
 .direction-pick:hover { border-color: var(--workspace-ink); }
 .direction-pick.selected { border-color: var(--workspace-ink); background: #fffdf8; }
