@@ -156,7 +156,7 @@ export function getTargetCanvasPixels(product: ProductFormat): { widthPx: number
 export function validateProductionDraft(input: ProductionDraftInput): ProductionValidation {
   const issues: ValidationIssue[] = [];
   const warnings: ValidationIssue[] = [];
-  const product = Object.prototype.hasOwnProperty.call(PRODUCT_PRINT_SPECIFICATIONS, input.product)
+  const product = Object.hasOwn(PRODUCT_PRINT_SPECIFICATIONS, input.product)
     ? input.product
     : null;
   const specification = product ? PRODUCT_PRINT_SPECIFICATIONS[product] : null;

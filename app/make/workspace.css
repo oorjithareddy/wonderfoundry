@@ -250,3 +250,12 @@
   .workspace-footer { flex-wrap: wrap; padding: 22px 5%; }
   .workspace-footer > span { order: 3; flex: 1 0 100%; text-align: left; }
 }
+
+/* Reset native fieldset styles so semantic option groups keep their existing layout. */
+.workspace-shell .format-options,
+.workspace-shell .direction-options {
+  border: 0;
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+}
