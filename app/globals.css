@@ -360,3 +360,30 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
   box-shadow: 0 0 0 3px rgba(238, 221, 192, .55), 0 8px 12px rgba(24, 9, 12, .3);
 }
 .wf-sticker.reference-sticker[role="img"] { user-select: none; }
+
+
+/* Uploaded photographic cut-outs keep their original aspect and texture. */
+.wf-sticker.reference-sticker-photo {
+  background-size: cover;
+  background-position: center 58%;
+  border: 1px solid rgba(211, 178, 127, .26);
+  box-shadow: 0 1px 1px rgba(239,220,185,.2), 0 8px 12px rgba(24,9,12,.3);
+  border-radius: 0;
+}
+.wf-sticker.reference-sticker-photo.sticker-jaguar,
+.wf-sticker.reference-sticker-photo.pinboard-tiger,
+.wf-sticker.reference-sticker-photo.shelf-jaguar {
+  aspect-ratio: 4 / 5;
+}
+.wf-sticker.reference-sticker-photo.pinboard-tiger {
+  width: 145px;
+  max-width: 24%;
+}
+.wf-sticker.reference-sticker-photo.shelf-jaguar {
+  aspect-ratio: 3 / 4;
+}
+.wf-sticker.reference-sticker:not(.reference-sticker-photo) {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+}

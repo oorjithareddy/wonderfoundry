@@ -469,3 +469,13 @@
   background-position: center 58%;
   border: 1px solid rgba(211,178,127,.42);
 }
+
+/* Individual uploaded cut-outs replace low-resolution sprite crops. */
+.workspace-shell .reference-sticker:not(.reference-sticker-photo) {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.workspace-shell .reference-sticker-photo {
+  background-size: cover;
+  background-position: center 58%;
+}
