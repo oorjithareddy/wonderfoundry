@@ -2,7 +2,7 @@ import {
   BURGUNDY_EDITORIAL_THEME,
   type ProductFormat,
   type ProductThemeProfile,
-} from "@/lib/production-model";
+} from "./production-model";
 
 export type CreativeProviderMode = "demo" | "ai";
 
