@@ -70,6 +70,18 @@ export default function Home() {
             </article>
           ))}
           <aside className="press-scrap" aria-label="A fictional newspaper clipping"><div className="press-scrap-header"><span>THE WONDERFOUNDRY GAZETTE</span><span>NO. 07</span></div><strong>LOCAL PERSON<br />BECOMES<br /><em>THE WHOLE STORY.</em></strong><div className="press-scrap-columns"><i /><i /><i /><i /></div><span className="press-scrap-footer">EXTRA! EXTRA! THE LORE IS REAL.</span></aside>
+          <aside className="archive-contact-sheet" aria-label="A small printed index of collected objects">
+            <div className="contact-masthead"><span>SUPPLEMENT / A</span><span>OBJECT INDEX</span></div>
+            <h3>Little things.<br /><em>Big lore.</em></h3>
+            <p className="contact-intro">Evidence from the department of very personal things.</p>
+            <div className="contact-cutouts">
+              <div className="contact-object contact-radio"><RetroSticker kind="radio" /><span>FREQUENCY / 07</span></div>
+              <div className="contact-object contact-car"><RetroSticker kind="car" /><span>NIGHT DRIVE / 1978</span></div>
+              <div className="contact-object contact-cassette"><RetroSticker kind="cassette" /><span>SIDE A / 02:17</span></div>
+              <div className="contact-object contact-flower"><RetroSticker kind="flower" /><span>SPECIMEN / 004</span></div>
+            </div>
+            <div className="contact-bottomline"><span>FIELD NOTE NO. 01</span><span>KEEP EVERYTHING.</span></div>
+          </aside>
           <RetroSticker kind="tiger" className="pinboard-tiger sticker-drift" /><RetroSticker kind="star" className="pinboard-star sticker-spin" />
         </div>
         <div className="wf-archive-footer"><span>FIG. 001—005 / A SMALL SAMPLE OF MANY POSSIBILITIES</span><a href="/make">START YOUR OWN FILE <b aria-hidden="true">↗</b></a></div>
@@ -86,7 +98,7 @@ export default function Home() {
       </div></section>
 
       <section className="wf-process" id="how-it-works" aria-labelledby="wf-process-title"><div className="process-print-header"><p className="wf-kicker"><span className="wf-kicker-line" /> HOW THE LITTLE MACHINE WORKS</p><h2 id="wf-process-title">From brain<br />to <em>bookshop.</em></h2><RetroSticker kind="vinyl" className="process-vinyl sticker-spin" /></div>
-        <div className="wf-process-grid"><article><span className="wf-process-index">01 / THE BRIEF</span><RetroSticker kind="flower" className="process-icon" /><h3>Tell the story.</h3><p>A friend, an obsession, a family saying, a weird little theory. Give the idea its lore.</p></article><article><span className="wf-process-index">02 / THE PLAY</span><RetroSticker kind="cassette" className="process-icon process-cassette" /><h3>Try on a look.</h3><p>Play with mood, typography, imagery and format until it looks like your world.</p></article><article><span className="wf-process-index">03 / THE OBJECT</span><RetroSticker kind="star" className="process-icon process-star" /><h3>Make it tangible.</h3><p>Review the properly prepared art before a production partner makes the physical thing.</p></article></div>
+        <div className="wf-process-grid"><article><span className="wf-process-index">01 / THE BRIEF</span><RetroSticker kind="flower" className="wf-process-icon process-flower" /><h3>Tell the story.</h3><p>A friend, an obsession, a family saying, a weird little theory. Give the idea its lore.</p></article><article><span className="wf-process-index">02 / THE PLAY</span><RetroSticker kind="cassette" className="wf-process-icon process-cassette" /><h3>Try on a look.</h3><p>Play with mood, typography, imagery and format until it looks like your world.</p></article><article><span className="wf-process-index">03 / THE OBJECT</span><RetroSticker kind="star" className="wf-process-icon process-star" /><h3>Make it tangible.</h3><p>Review the properly prepared art before a production partner makes the physical thing.</p></article></div>
       </section>
 
       <footer className="wf-footer"><a className="wf-wordmark" href="#top"><span className="wf-brand-stamp" aria-hidden="true">✳</span><span>wonderfoundry<span className="wf-brand-period">®</span></span></a><p>Little artefacts from your very particular universe.</p><a href="#top" className="wf-back-top">BACK TO THE TOP ↑</a><div className="wf-footer-bottom"><span>THE PERSONAL PRINT DEPARTMENT / EST. 2026</span><span>AN EARLY PROTOTYPE — MADE OF LORE</span></div></footer>
