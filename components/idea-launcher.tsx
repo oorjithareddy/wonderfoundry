@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { motion } from "motion/react";
 
 type Direction = {
@@ -9,51 +9,63 @@ type Direction = {
   label: string;
   description: string;
   icon: string;
+  product: "book" | "deck" | "poster";
 };
 
-function getDirections(idea: string): Direction[] {
-  const aboutPet = /pet|dog|cat|puppy|kitten|rabbit|bird/i.test(idea);
-  const aboutPeople = /friend|sister|brother|mum|mom|dad|partner|girlfriend|boyfriend|family|people|roommate/i.test(idea);
-  const subject = aboutPet ? "your favourite creature" : aboutPeople ? "your people" : "your very specific idea";
-
-  return [
-    {
-      id: "field-guide",
-      title: aboutPet ? "The Pet Field Guide" : "The Field Guide",
-      label: "MINI BOOK",
-      description: `A tiny guide to ${subject}: habits, lore, quotes and extremely scientific observations.`,
-      icon: "▤",
-    },
-    {
-      id: "lore-deck",
-      title: "The Lore Deck",
-      label: "CARD SET",
-      description: "A deck of prompts, rankings and facts that deserve to become permanent group canon.",
-      icon: "▧",
-    },
-    {
-      id: "cover-story",
-      title: "The Cover Story",
-      label: "POSTER / ZINE",
-      description: "Turn the idea into an imaginary magazine cover, feature story or wall-worthy artefact.",
-      icon: "▣",
-    },
-  ];
-}
+type DirectionsResponse = {
+  ok: boolean;
+  result?: {
+    mode: "demo" | "ai";
+    provider: string;
+    notice?: string;
+    directions: Direction[];
+  };
+  error?: string;
+};
 
 export function IdeaLauncher() {
   const [idea, setIdea] = useState("");
   const [submittedIdea, setSubmittedIdea] = useState("");
-  const [selectedDirection, setSelectedDirection] = useState("field-guide");
-  const directions = useMemo(() => getDirections(submittedIdea), [submittedIdea]);
+  const [directions, setDirections] = useState<Direction[]>([]);
+  const [selectedDirection, setSelectedDirection] = useState("");
+  const [mode, setMode] = useState<"demo" | "ai">("demo");
+  const [notice, setNotice] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const selected = directions.find((direction) => direction.id === selectedDirection) ?? directions[0];
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const cleanIdea = idea.trim();
-    if (!cleanIdea) return;
+    if (cleanIdea.length < 3 || isLoading) return;
+
+    setIsLoading(true);
+    setError("");
+    setNotice("");
     setSubmittedIdea(cleanIdea);
-    setSelectedDirection("field-guide");
+    setDirections([]);
+    setSelectedDirection("");
+
+    try {
+      const response = await fetch("/api/creation/directions", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ idea: cleanIdea }),
+        cache: "no-store",
+      });
+      const payload = await response.json() as DirectionsResponse;
+      if (!response.ok || !payload.ok || !payload.result) {
+        throw new Error(payload.error ?? "We couldn't find a direction just now. Please try again.");
+      }
+      setDirections(payload.result.directions);
+      setMode(payload.result.mode);
+      setNotice(payload.result.notice ?? "");
+      setSelectedDirection(payload.result.directions[0]?.id ?? "");
+    } catch (submitError) {
+      setError(submitError instanceof Error ? submitError.message : "We couldn't find a direction just now. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -67,11 +79,18 @@ export function IdeaLauncher() {
           placeholder="A field guide to my best friend, ranked by snack loyalty…"
           maxLength={500}
           rows={4}
+          required
+          minLength={3}
+          aria-describedby="idea-form-hint"
         />
-        <div className="idea-form-footer"><span>{idea.length}/500</span><button className="button button-lime" type="submit" disabled={!idea.trim()}>Find a direction <span aria-hidden="true">↗</span></button></div>
+        <div className="idea-form-footer"><span id="idea-form-hint">{idea.length}/500</span><button className="button button-lime" type="submit" disabled={idea.trim().length < 3 || isLoading}>{isLoading ? "Finding ideas…" : "Find a direction"} <span aria-hidden="true">↗</span></button></div>
       </form>
 
-      {submittedIdea ? (
+      {isLoading ? (
+        <div className="idea-empty-state" role="status" aria-live="polite"><span className="empty-spark" aria-hidden="true">✳</span><p>Turning your idea around.<br /><strong>Finding three ways into it…</strong></p><span className="empty-arrow" aria-hidden="true">↗</span></div>
+      ) : error ? (
+        <div className="idea-empty-state" role="alert"><span className="empty-spark" aria-hidden="true">✳</span><p>We hit a little snag.<br /><strong>{error}</strong></p><span className="empty-arrow" aria-hidden="true">↗</span></div>
+      ) : submittedIdea && directions.length > 0 ? (
         <motion.div className="direction-results" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.28 }} aria-live="polite">
           <div className="results-heading"><span>THREE WAYS TO PLAY WITH IT</span><span className="results-idea">“{submittedIdea}”</span></div>
           <div className="direction-list">
@@ -92,7 +111,7 @@ export function IdeaLauncher() {
               </motion.button>
             ))}
           </div>
-          <p className="selected-note"><span className="status-dot" /> DIRECTION SELECTED: <strong>{selected.title}</strong> <span>— this is a local demo; nothing has been saved.</span></p>
+          <p className="selected-note"><span className="status-dot" /> {mode === "ai" ? "AI-GENERATED DRAFT" : "DEMO DIRECTIONS"}: <strong>{selected?.title ?? "Choose a direction"}</strong> <span>{notice || (mode === "demo" ? "— rule-based preview; no AI provider is configured." : "— review and revise before use.")}</span></p>
         </motion.div>
       ) : (
         <div className="idea-empty-state"><span className="empty-spark" aria-hidden="true">✳</span><p>Your idea goes here.<br /><strong>Three possible directions come back.</strong></p><span className="empty-arrow" aria-hidden="true">↖</span></div>
