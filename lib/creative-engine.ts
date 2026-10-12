@@ -176,7 +176,6 @@ function themeDirection(theme: ProductThemeProfile | null, visualApproach: strin
 function buildDirection(
   base: (typeof DIRECTIONS_BY_PRODUCT)[ProductFormat][number],
   product: ProductFormat,
-  index: number,
   theme: ProductThemeProfile | null,
 ): CreativeDirection {
   return {
@@ -205,7 +204,7 @@ export function buildDemoCreativeDirections(
   const theme = resolveTheme(request.themeId);
   const products = chosenProducts(request);
   const directions = products.map((product, index) =>
-    buildDirection(DIRECTIONS_BY_PRODUCT[product][index], product, index, theme),
+    buildDirection(DIRECTIONS_BY_PRODUCT[product][index], product, theme),
   );
 
   return {
@@ -244,12 +243,22 @@ Rules:
 export class OpenAICompatibleCreativeProvider implements CreativeProvider {
   readonly name = "openai-compatible";
 
+  private readonly apiKey: string;
+  private readonly baseUrl: string;
+  private readonly model: string;
+  private readonly fetcher: typeof fetch;
+
   constructor(
-    private readonly apiKey: string,
-    private readonly baseUrl: string,
-    private readonly model: string,
-    private readonly fetcher: typeof fetch = fetch,
-  ) {}
+    apiKey: string,
+    baseUrl: string,
+    model: string,
+    fetcher: typeof fetch = fetch,
+  ) {
+    this.apiKey = apiKey;
+    this.baseUrl = baseUrl;
+    this.model = model;
+    this.fetcher = fetcher;
+  }
 
   async generate(request: CreativeDirectionRequest): Promise<unknown> {
     const theme = resolveTheme(request.themeId);
@@ -328,7 +337,7 @@ function normalizeAiResult(
   }
 
   const seen = new Set<string>();
-  const directions = raw.directions.map((item, index): CreativeDirection => {
+  const directions = raw.directions.map((item): CreativeDirection => {
     if (!isRecord(item)) throw new Error("Each AI direction must be an object.");
     const product = isProductFormat(item.product) ? item.product : null;
     if (!product || (request.product && product !== request.product)) {
