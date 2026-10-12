@@ -89,7 +89,7 @@ export default function Home() {
       <section className="explore section-wrap" id="explore" aria-labelledby="explore-title">
         <div className="section-heading">
           <div><p className="eyebrow">A FEW PLACES TO BEGIN</p><h2 id="explore-title">Choose your kind<br />of <span className="serif-accent">weird.</span></h2></div>
-          <p className="section-intro">These aren't fixed products. They're starting points. Bring the idea; we'll figure out what shape it wants to take.</p>
+          <p className="section-intro">These aren&apos;t fixed products. They&apos;re starting points. Bring the idea; we&apos;ll figure out what shape it wants to take.</p>
         </div>
         <div className="creation-grid">
           {creations.map((creation) => (
@@ -114,7 +114,7 @@ export default function Home() {
           <div className="idea-lab-copy">
             <p className="eyebrow"><span className="eyebrow-line" /> THE IDEA LAB / OPEN</p>
             <h2 id="idea-lab-title">Okay, your turn.<br /><span className="serif-accent">What are we making?</span></h2>
-            <p>Start with a half-formed thought. A person, a memory, a bit of lore. It doesn't need to be polished to be interesting.</p>
+            <p>Start with a half-formed thought. A person, a memory, a bit of lore. It doesn&apos;t need to be polished to be interesting.</p>
             <div className="prototype-label"><span className="status-dot" /> DEMO MODE · NO AI CALLS OR SAVING YET</div>
           </div>
           <IdeaLauncher />
@@ -124,7 +124,7 @@ export default function Home() {
       <section className="how-it-works section-wrap" id="how-it-works" aria-labelledby="how-title">
         <div className="how-title-wrap"><p className="eyebrow">FROM THOUGHT TO THING</p><h2 id="how-title">A little imagination.<br /><span className="serif-accent">A real-world object.</span></h2></div>
         <div className="steps-grid">
-          <article className="step"><span className="step-number">01</span><span className="step-icon" aria-hidden="true">✳</span><h3>Tell us the lore.</h3><p>Describe the person, memory, mood or absurd little idea you can't stop thinking about.</p></article>
+          <article className="step"><span className="step-number">01</span><span className="step-icon" aria-hidden="true">✳</span><h3>Tell us the lore.</h3><p>Describe the person, memory, mood or absurd little idea you can&apos;t stop thinking about.</p></article>
           <article className="step"><span className="step-number">02</span><span className="step-icon step-icon-blue" aria-hidden="true">↗</span><h3>Play with directions.</h3><p>Explore different creative routes, add details, and shape the one that feels like you.</p></article>
           <article className="step"><span className="step-number">03</span><span className="step-icon step-icon-coral" aria-hidden="true">✳</span><h3>Make it tangible.</h3><p>Review a print-ready preview before a production partner makes the real thing.</p></article>
         </div>
@@ -132,7 +132,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <a className="wordmark footer-wordmark" href="#top"><span className="brand-mark" aria-hidden="true">✳</span><span>wonderfoundry<span className="wordmark-period">.</span></span></a>
-        <p>For the ideas that don't fit neatly anywhere else.</p>
+        <p>For the ideas that don&apos;t fit neatly anywhere else.</p>
         <a className="footer-top" href="#top">Back to the top ↑</a>
         <span className="footer-small">AN EARLY PROTOTYPE · 2026</span>
       </footer>
