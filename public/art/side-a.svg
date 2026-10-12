@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-labelledby="t"><title id="t">Side A — your people</title>
+<defs><linearGradient id="b" x2="0" y2="1"><stop stop-color="#54222a"/><stop offset="1" stop-color="#231417"/></linearGradient><radialGradient id="vinyl"><stop stop-color="#a43c46"/><stop offset=".15" stop-color="#2b1619"/><stop offset=".18" stop-color="#111"/><stop offset=".7" stop-color="#2e2525"/><stop offset="1" stop-color="#100d0e"/></radialGradient><pattern id="grooves" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="4" fill="none" stroke="#8b7a70" stroke-width=".45"/></pattern></defs>
+<rect width="600" height="800" fill="url(#b)"/><rect x="22" y="22" width="556" height="756" fill="none" stroke="#d4bd9a" stroke-width="2"/>
+<text x="43" y="64" fill="#d7c3a5" font-size="13" letter-spacing="4" font-family="Arial,sans-serif" font-weight="700">A PERSONAL SOUNDTRACK</text>
+<text x="40" y="169" fill="#f1e7d8" font-family="Georgia,serif" font-size="82" font-weight="700" letter-spacing="-5">SIDE A</text>
+<text x="43" y="215" fill="#c7948b" font-family="Georgia,serif" font-size="32" font-style="italic">for the ones who get it.</text>
+<g transform="translate(322 451) rotate(-11)">
+ <circle r="205" fill="#0f0d0e" stroke="#c6a77a" stroke-width="3"/><circle r="190" fill="url(#vinyl)"/><circle r="174" fill="url(#grooves)" opacity=".65"/><circle r="127" fill="none" stroke="#75635c" stroke-width="1.2"/><circle r="84" fill="#842d38" stroke="#cda86e" stroke-width="2"/><circle r="63" fill="#a84c53" opacity=".52"/><circle r="12" fill="#d7c3a5"/><path d="M0-205V-185M205 0H185M0 205V185M-205 0H-185" stroke="#d7c3a5" stroke-width="2"/>
+</g>
+<path d="M80 351L221 270" stroke="#d6c4a5" stroke-width="12" stroke-linecap="round"/><path d="M221 270l14-20" stroke="#d6c4a5" stroke-width="21" stroke-linecap="round"/><circle cx="80" cy="351" r="15" fill="#b99068" stroke="#f1e7d8" stroke-width="3"/>
+<text x="44" y="720" fill="#d7c3a5" font-family="Georgia,serif" font-style="italic" font-size="26">The unofficial anthology.</text>
+<text x="44" y="751" fill="#f1e7d8" font-family="Arial,sans-serif" font-weight="700" font-size="11" letter-spacing="3">TRACKS · TALL TALES · LATE NIGHTS</text>
+</svg>

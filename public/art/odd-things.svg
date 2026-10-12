@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-labelledby="t d"><title id="t">Odd things for good people</title><desc id="d">An original burgundy and cream editorial poster with flowers and layered typography.</desc>
+<defs>
+ <linearGradient id="p" x2="1" y2="1"><stop stop-color="#f0e4d1"/><stop offset="1" stop-color="#d8c1a7"/></linearGradient>
+ <linearGradient id="r" x2="0" y2="1"><stop stop-color="#8e3440"/><stop offset="1" stop-color="#451920"/></linearGradient>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .3 0 0 0 0 .2 0 0 0 0 .18 0 0 0 .11 0"/></filter>
+ <g id="flower"><ellipse cy="-35" rx="19" ry="34" fill="#d6a7a0"/><ellipse cy="-35" rx="19" ry="34" fill="#d6a7a0" transform="rotate(60)"/><ellipse cy="-35" rx="19" ry="34" fill="#d6a7a0" transform="rotate(120)"/><ellipse cy="-35" rx="19" ry="34" fill="#d6a7a0" transform="rotate(180)"/><ellipse cy="-35" rx="19" ry="34" fill="#d6a7a0" transform="rotate(240)"/><ellipse cy="-35" rx="19" ry="34" fill="#d6a7a0" transform="rotate(300)"/><circle r="15" fill="#c3a06b"/><circle r="8" fill="#581e27"/></g>
+</defs>
+<rect width="600" height="800" fill="url(#p)"/><rect x="18" y="18" width="564" height="764" fill="none" stroke="#57232a" stroke-width="2"/>
+<path d="M35 88H565M35 713H565" stroke="#6f2a34" stroke-width="1"/>
+<text x="38" y="59" fill="#67232d" font-size="14" font-family="Arial,sans-serif" font-weight="700" letter-spacing="4">THE PERSONAL PRINT DEPARTMENT</text>
+<text x="558" y="59" text-anchor="end" fill="#67232d" font-size="12" font-family="Georgia,serif">NO. 001</text>
+<text x="45" y="178" fill="#6f202c" font-family="Georgia,serif" font-size="70" font-weight="700" letter-spacing="-4">ODD THINGS</text>
+<text x="43" y="239" fill="#241315" font-family="Georgia,serif" font-size="70" font-style="italic" letter-spacing="-4">for good people.</text>
+<path d="M55 280C150 253 212 315 303 283S455 270 546 300" fill="none" stroke="#8d454a" stroke-width="2"/>
+<g transform="translate(405 446) scale(1.78)"><use href="#flower"/></g>
+<g transform="translate(225 512) scale(1.2) rotate(-17)"><use href="#flower"/></g>
+<path d="M399 482Q366 566 390 625M406 512Q466 530 492 579M226 548Q186 601 152 625M230 567Q277 594 296 641" fill="none" stroke="#4c5b42" stroke-width="5" stroke-linecap="round"/>
+<path d="M394 547q-65-26-72-73q54 5 72 73M433 545q50-49 90-32q-23 43-90 32M192 582q-70-5-81-46q57-11 81 46M251 590q59-25 83 8q-40 29-83-8" fill="#62684e"/>
+<text x="40" y="673" fill="#241315" font-family="Georgia,serif" font-size="26" font-style="italic">A little lore. A lot of life.</text>
+<text x="40" y="750" fill="#67232d" font-size="11" font-family="Arial,sans-serif" font-weight="700" letter-spacing="3">MADE FROM YOUR PARTICULAR UNIVERSE</text>
+<rect width="600" height="800" filter="url(#grain)" opacity=".15"/>
+</svg>

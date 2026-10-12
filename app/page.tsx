@@ -1,140 +1,184 @@
+"use client";
+
+import { useState } from "react";
 import { IdeaLauncher } from "@/components/idea-launcher";
 
-const creations = [
+const posters = [
   {
-    number: "01",
-    category: "THE PEOPLE ARCHIVE",
+    id: "people",
+    number: "001",
+    label: "THE PEOPLE ARCHIVE",
     title: "A field guide to your favourite human.",
-    description: "Tiny details, legendary quotes, questionable habits. All the lore in one little book.",
-    type: "field-guide",
-    stamp: "YOU KNOW THE ONE",
-    colour: "paper",
+    description: "Every in-joke, tiny habit and legendary quote — collected like a very unofficial museum.",
+    image: "/art/odd-things.svg",
+    alt: "Original vintage botanical poster in oxblood and antique paper",
+    className: "archive-print archive-print-large",
+    format: "MINI BOOK / MEMORY ARCHIVE",
   },
   {
-    number: "02",
-    category: "INSIDE-JOKE DECKS",
-    title: "A card game only your group gets.",
-    description: "The bits of context that make absolutely no sense to anybody else.",
-    type: "card-deck",
-    stamp: "DEEP LORE",
-    colour: "merlot",
+    id: "soundtrack",
+    number: "002",
+    label: "SOUNDTRACKS & SIDE QUESTS",
+    title: "Your life, as a record sleeve.",
+    description: "A cover for the songs, people and moments that made the lore.",
+    image: "/art/side-a.svg",
+    alt: "Original vinyl-record illustration on a deep burgundy music poster",
+    className: "archive-print archive-print-record",
+    format: "POSTER / PERSONAL ANTHOLOGY",
   },
   {
-    number: "03",
-    category: "IMAGINARY OBJECTS",
-    title: "A tiny universe with your name on it.",
-    description: "Fake magazines, personal myths, strange posters and other very real ideas.",
-    type: "imaginary",
-    stamp: "NOT THAT SERIOUS",
-    colour: "rose",
+    id: "wild",
+    number: "003",
+    label: "WILD BOTANICAL",
+    title: "A little wild by nature.",
+    description: "Botanical shapes, old paper and patterns with a mind of their own.",
+    image: "/art/wild-bloom.svg",
+    alt: "Original stylized burgundy botanical poster with a patterned background",
+    className: "archive-print archive-print-flower",
+    format: "PRINT / COLLECTIBLE CARD",
+  },
+  {
+    id: "outlaw",
+    number: "004",
+    label: "AFTER HOURS",
+    title: "For your little outlaw era.",
+    description: "Western ephemera, late-night energy and the art of not behaving.",
+    image: "/art/little-outlaw.svg",
+    alt: "Original vintage-inspired western poster in wine and antique gold",
+    className: "archive-print archive-print-outlaw",
+    format: "ZINE / CARD DECK",
   },
 ];
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <main className="site-shell">
-      <div className="announcement">
-        <span><i className="status-dot" aria-hidden="true" /> A SMALL STUDIO FOR BIG PERSONALITY</span>
-        <span className="announcement-right">YOUR STRANGEST IDEA IS WELCOME <span aria-hidden="true">↗</span></span>
+    <main className="wf-site">
+      <div className="wf-topstrip">
+        <span><i aria-hidden="true" /> THE PERSONAL PRINT DEPARTMENT</span>
+        <span className="wf-strip-center">MEMORIES / MYTHS / MISCHIEF</span>
+        <a href="/make">YOUR IDEA GOES HERE <span aria-hidden="true">↗</span></a>
       </div>
 
-      <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Wonderfoundry home">
-          <span className="brand-mark" aria-hidden="true">✳</span>
-          <span>wonderfoundry<span className="wordmark-period">.</span></span>
+      <header className="wf-header">
+        <a className="wf-wordmark" href="#top" aria-label="Wonderfoundry home">
+          <span className="wf-brand-stamp" aria-hidden="true">✳</span>
+          <span>wonderfoundry<span>.</span></span>
         </a>
-        <nav className="main-nav" aria-label="Main navigation">
-          <a href="#explore">Explore ideas</a>
-          <a href="#how-it-works">How it works</a>
+        <button className="wf-menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="wf-navigation" onClick={() => setMenuOpen((open) => !open)}>
+          {menuOpen ? "CLOSE −" : "MENU +"}
+        </button>
+        <nav className={`wf-nav ${menuOpen ? "is-open" : ""}`} id="wf-navigation" aria-label="Main navigation">
+          <a href="#archive" onClick={() => setMenuOpen(false)}>The archive</a>
+          <a href="#how-it-works" onClick={() => setMenuOpen(false)}>How it works</a>
+          <a className="wf-nav-cta" href="/make">Make a little something <span aria-hidden="true">↗</span></a>
         </nav>
-        <a className="header-cta" href="/make">Make a thing <span aria-hidden="true">↗</span></a>
       </header>
 
-      <section className="hero section-wrap" id="top" aria-labelledby="hero-title">
-        <div className="hero-copy">
-          <div className="eyebrow"><span className="eyebrow-line" /> MADE FOR THE TOO-SPECIFIC IDEA</div>
-          <h1 id="hero-title">Make it strange.<br />Make it <span className="highlight-word">yours<span className="scribble" aria-hidden="true">〰</span></span></h1>
-          <p className="hero-description">Your best ideas are too personal for a template. Turn your memories, inside jokes and beautifully weird thoughts into real things you can hold.</p>
-          <div className="hero-actions">
-            <a className="button button-dark" href="/make">Start with an idea <span aria-hidden="true">↗</span></a>
-            <a className="text-link" href="#explore">Wander around first <span aria-hidden="true">↓</span></a>
+      <section className="wf-hero" id="top" aria-labelledby="wf-hero-title">
+        <div className="wf-hero-copy">
+          <p className="wf-kicker"><span className="wf-kicker-line" /> MADE FOR THE PARTICULARLY SPECIFIC</p>
+          <h1 id="wf-hero-title">Not quite<br /><em>ordinary.</em><br /><span>Entirely</span> <b>yours.</b></h1>
+          <p className="wf-hero-lede">Some ideas are too personal for a template. Turn your people, memories and beautifully weird little obsessions into something you can actually hold.</p>
+          <div className="wf-hero-actions">
+            <a href="/make" className="wf-button wf-button-dark">Enter the making room <span aria-hidden="true">↗</span></a>
+            <a href="#archive" className="wf-text-link">Browse the oddities <span aria-hidden="true">↓</span></a>
           </div>
-          <div className="hero-note"><span className="note-star" aria-hidden="true">✳</span><span>Made from your imagination.<br /><strong>Not another off-the-shelf gift.</strong></span></div>
+          <div className="wf-hero-footer">
+            <span className="wf-seal" aria-hidden="true">W<br />F</span>
+            <span><strong>NOT MASS-PRODUCED PERSONALITY.</strong><br />Little artefacts from your own universe.</span>
+            <span className="wf-hero-issue">ISSUE № 001<br />2026 — ONGOING</span>
+          </div>
         </div>
 
-        <div className="hero-art" role="img" aria-label="An illustrated sample of a personal field guide booklet">
-          <div className="art-orbit orbit-one" aria-hidden="true" />
-          <div className="art-orbit orbit-two" aria-hidden="true" />
-          <div className="float-note float-note-top">A ONE-OF-ONE<br />KIND OF THING <span aria-hidden="true">↘</span></div>
-          <div className="sample-book">
-            <div className="book-topline"><span>WF / FIELD NOTES</span><span>NO. 001</span></div>
-            <div className="book-sun" aria-hidden="true"><span>✳</span></div>
-            <p className="book-kicker">A VERY UNOFFICIAL</p>
-            <p className="book-title">FIELD GUIDE<br />TO <em>MY PEOPLE</em></p>
-            <div className="book-bottom"><span>OBSERVATIONS · LORE · LEGEND</span><span>VOL. 01</span></div>
-          </div>
-          <div className="float-note float-note-bottom"><span className="mini-spark" aria-hidden="true">✳</span> NOT A TEMPLATE.<br />A LITTLE ARTEFACT.</div>
-          <div className="art-caption"><span>SPECIMEN 001</span><span>THE PEOPLE ARCHIVE</span></div>
+        <div className="wf-art-wall" aria-label="A wall of original poster artwork">
+          <div className="wf-wall-label wall-label-top">AN EXHIBITION OF VERY SPECIFIC THINGS</div>
+          <figure className="wf-wall-print wf-wall-print-main">
+            <img src="/art/odd-things.svg" width="600" height="800" alt="Original poster: Odd things for good people, with burgundy typography and botanical artwork" />
+            <figcaption>01 / THE PEOPLE ARCHIVE</figcaption>
+          </figure>
+          <figure className="wf-wall-print wf-wall-print-record">
+            <img src="/art/side-a.svg" width="600" height="800" alt="Original burgundy music poster featuring a vinyl record" />
+          </figure>
+          <figure className="wf-wall-print wf-wall-print-flower">
+            <img src="/art/wild-bloom.svg" width="600" height="800" alt="Original botanical illustration with a deep red flower and vintage pattern" />
+          </figure>
+          <span className="wf-wall-sticker sticker-one">YOUR LORE<br />LOOKS GOOD.</span>
+          <span className="wf-wall-sticker sticker-two">NOT FOR<br />EVERYBODY ✳</span>
+          <span className="wf-wall-catalogue">WONDERFOUNDRY<br />COLLECTORS' DEPT. / A</span>
         </div>
       </section>
 
-      <div className="ticker">
-        <div className="ticker-track" aria-hidden="true">
-          {["first", "second"].map((copy) => (
-            <span className="ticker-set" key={copy}>GOOD IDEAS GET PHYSICAL <b>✳</b> MEMORIES, BUT MAKE THEM OBJECTS <b>✳</b> WEIRDLY SPECIFIC IS THE POINT <b>✳</b> ONE IDEA, A HUNDRED DIRECTIONS <b>✳</b> </span>
+      <div className="wf-marquee" aria-label="Creative possibilities">
+        <div className="wf-marquee-track" aria-hidden="true">
+          {["A LITTLE LORE", "A LOT OF PERSONALITY", "PRINTED FOR KEEPS", "THE WEIRD BITS ARE THE GOOD BITS"].map((phrase) => (
+            <span className="wf-marquee-item" key={phrase}>{phrase}<b>✳</b></span>
+          ))}
+          {["A LITTLE LORE", "A LOT OF PERSONALITY", "PRINTED FOR KEEPS", "THE WEIRD BITS ARE THE GOOD BITS"].map((phrase) => (
+            <span className="wf-marquee-item" key={`repeat-${phrase}`}>{phrase}<b>✳</b></span>
           ))}
         </div>
       </div>
 
-      <section className="explore section-wrap" id="explore" aria-labelledby="explore-title">
-        <div className="section-heading">
-          <div><p className="eyebrow">A FEW PLACES TO BEGIN</p><h2 id="explore-title">Choose your kind<br />of <span className="serif-accent">weird.</span></h2></div>
-          <p className="section-intro">These aren&apos;t fixed products. They&apos;re starting points. Bring the idea; we&apos;ll figure out what shape it wants to take.</p>
+      <section className="wf-archive" id="archive" aria-labelledby="wf-archive-title">
+        <div className="wf-section-top">
+          <div>
+            <p className="wf-kicker"><span className="wf-kicker-line" /> CURATED ODDITIES / 001—004</p>
+            <h2 id="wf-archive-title">A cabinet of<br /><em>curiosities.</em></h2>
+          </div>
+          <p className="wf-section-note">These aren't fixed products. They're creative rabbit holes. Bring the story; we'll help it find a form.</p>
         </div>
-        <div className="creation-grid">
-          {creations.map((creation) => (
-            <article className={`creation-card ${creation.colour}`} key={creation.number}>
-              <div className="creation-top"><span>{creation.number} / 03</span><span className="creation-stamp">{creation.stamp}</span></div>
-              <div className={`creation-art ${creation.type}`} aria-hidden="true">
-                {creation.type === "field-guide" ? <><span className="mini-book-line">A FIELD GUIDE TO</span><span className="mini-book-title">YOUR<br />FAVOURITE<br /><i>HUMAN.</i></span><span className="mini-book-burst">✳</span><span className="mini-book-foot">THE UNOFFICIAL EDITION</span></> : null}
-                {creation.type === "card-deck" ? <><span className="deck-card deck-back">NOT<br />CANON.</span><span className="deck-card deck-front"><i>THE</i><strong>LORE<br />DECK</strong><small>EST. SOMEWHERE IN THE GROUP CHAT</small></span><span className="deck-doodle">✳</span></> : null}
-                {creation.type === "imaginary" ? <><span className="imaginary-star">✳</span><span className="imaginary-sun" /><span className="imaginary-title">A VERY<br /><em>REAL</em><br />FICTION.</span><span className="imaginary-orbit" /></> : null}
+
+        <div className="wf-archive-wall">
+          {posters.map((poster) => (
+            <article className={poster.className} key={poster.id}>
+              <div className="wf-print-metadata"><span>WF / {poster.number}</span><span>{poster.format}</span></div>
+              <a href="/make" className="wf-print-art" aria-label={`Start creating: ${poster.title}`}>
+                <img src={poster.image} alt={poster.alt} width="600" height="800" loading="lazy" />
+                <span className="wf-print-open" aria-hidden="true">↗</span>
+              </a>
+              <div className="wf-print-copy">
+                <p>{poster.label}</p>
+                <h3>{poster.title}</h3>
+                <span>{poster.description}</span>
               </div>
-              <p className="creation-category">{creation.category}</p>
-              <h3>{creation.title}</h3>
-              <p className="creation-description">{creation.description}</p>
-              <a className="card-link" href="/make">Start here <span aria-hidden="true">↗</span></a>
+              <a className="wf-print-link" href="/make">MAKE YOUR OWN <span aria-hidden="true">↗</span></a>
             </article>
           ))}
         </div>
+        <div className="wf-archive-foot"><span>FIG. A — D / SAMPLE DIRECTIONS</span><span>THE FIRST EDITION IS ONLY THE BEGINNING</span></div>
       </section>
 
-      <section className="idea-lab" id="idea-lab" aria-labelledby="idea-lab-title">
-        <div className="idea-lab-inner section-wrap">
-          <div className="idea-lab-copy">
-            <p className="eyebrow"><span className="eyebrow-line" /> THE IDEA LAB / OPEN</p>
-            <h2 id="idea-lab-title">Okay, your turn.<br /><span className="serif-accent">What are we making?</span></h2>
-            <p>Start with a half-formed thought. A person, a memory, a bit of lore. It doesn&apos;t need to be polished to be interesting.</p>
-            <div className="prototype-label"><span className="status-dot" /> DEMO MODE · NO AI CALLS OR SAVING YET</div>
+      <section className="wf-lab" id="idea-lab" aria-labelledby="wf-lab-title">
+        <div className="wf-lab-inner">
+          <div className="wf-lab-copy">
+            <p className="wf-kicker"><span className="wf-kicker-line" /> THE MAKING ROOM / OPEN</p>
+            <h2 id="wf-lab-title">Enough looking.<br /><em>Make something.</em></h2>
+            <p>Tell us the half-formed thought you can't stop thinking about. A person. A bit of lore. A completely irrational ranking of everyone's snack loyalty.</p>
+            <div className="wf-lab-note"><span className="wf-lab-star" aria-hidden="true">✳</span><span>DEMO MODE / YOUR IDEA STAYS IN THIS TAB<br /><strong>No AI call, account or upload is made yet.</strong></span></div>
           </div>
           <IdeaLauncher />
         </div>
       </section>
 
-      <section className="how-it-works section-wrap" id="how-it-works" aria-labelledby="how-title">
-        <div className="how-title-wrap"><p className="eyebrow">FROM THOUGHT TO THING</p><h2 id="how-title">A little imagination.<br /><span className="serif-accent">A real-world object.</span></h2></div>
-        <div className="steps-grid">
-          <article className="step"><span className="step-number">01</span><span className="step-icon" aria-hidden="true">✳</span><h3>Tell us the lore.</h3><p>Describe the person, memory, mood or absurd little idea you can&apos;t stop thinking about.</p></article>
-          <article className="step"><span className="step-number">02</span><span className="step-icon step-icon-blue" aria-hidden="true">↗</span><h3>Play with directions.</h3><p>Explore different creative routes, add details, and shape the one that feels like you.</p></article>
-          <article className="step"><span className="step-number">03</span><span className="step-icon step-icon-coral" aria-hidden="true">✳</span><h3>Make it tangible.</h3><p>Review a print-ready preview before a production partner makes the real thing.</p></article>
+      <section className="wf-process" id="how-it-works" aria-labelledby="wf-process-title">
+        <div className="wf-process-heading">
+          <p className="wf-kicker"><span className="wf-kicker-line" /> FROM INSIDE JOKE TO OBJECT</p>
+          <h2 id="wf-process-title">The story is yours.<br /><em>The form is up for grabs.</em></h2>
+        </div>
+        <div className="wf-process-grid">
+          <article><span className="wf-process-index">01 / THE RAW MATERIAL</span><span className="wf-process-icon flower-icon" aria-hidden="true">✿</span><h3>Start with the lore.</h3><p>A memory, a person, a phrase no one else understands. The more particular, the better.</p></article>
+          <article><span className="wf-process-index">02 / THE PLAY</span><span className="wf-process-icon record-icon" aria-hidden="true">◉</span><h3>Try on different forms.</h3><p>Explore visual directions, change the mood, revise the details and keep the best bits.</p></article>
+          <article><span className="wf-process-index">03 / THE OBJECT</span><span className="wf-process-icon print-icon" aria-hidden="true">✳</span><h3>Make it tangible.</h3><p>Approve a properly prepared design before a production partner makes the real thing.</p></article>
         </div>
       </section>
 
-      <footer className="site-footer">
-        <a className="wordmark footer-wordmark" href="#top"><span className="brand-mark" aria-hidden="true">✳</span><span>wonderfoundry<span className="wordmark-period">.</span></span></a>
-        <p>For the ideas that don&apos;t fit neatly anywhere else.</p>
-        <a className="footer-top" href="#top">Back to the top ↑</a>
-        <span className="footer-small">AN EARLY PROTOTYPE · 2026</span>
+      <footer className="wf-footer">
+        <a className="wf-wordmark" href="#top"><span className="wf-brand-stamp" aria-hidden="true">✳</span><span>wonderfoundry<span>.</span></span></a>
+        <p>For the oddly specific things that make us, us.</p>
+        <a href="#top" className="wf-back-top">BACK TO THE TOP ↑</a>
+        <div className="wf-footer-bottom"><span>INDEPENDENTLY IMAGINED / NOT A TEMPLATE</span><span>AN EARLY PROTOTYPE · 2026</span></div>
       </footer>
     </main>
   );

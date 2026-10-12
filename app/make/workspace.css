@@ -305,3 +305,137 @@
   .preview-stage .mockup { transition: transform .3s ease; }
   .preview-stage:hover .mockup-book { transform: rotate(2deg) translateY(-3px); }
 }
+
+
+/* After-hours print studio: bring the workspace into the same poster-archive world. */
+.workspace-shell {
+  --workspace-paper: #F2E7D8;
+  --workspace-ink: #271719;
+  --workspace-muted: #9F857B;
+  --workspace-line: rgba(237, 215, 190, .22);
+  --workspace-lime: #C6A66F;
+  --workspace-blue: #772630;
+  --workspace-coral: #9A3D46;
+  --workspace-lilac: #B67E80;
+  --workspace-butter: #C6A66F;
+  color: var(--workspace-paper);
+  background: #2A171B;
+  background-image: linear-gradient(135deg, rgba(130,54,62,.13), transparent 46%), repeating-linear-gradient(0deg, rgba(245,228,206,.015) 0 1px, transparent 1px 5px);
+}
+.workspace-topbar { min-height: 72px; padding-inline: 5.1%; background: #35171C; border-bottom: 1px solid rgba(242,231,216,.2); color: var(--workspace-paper); }
+.workspace-brand { color: var(--workspace-paper); }
+.workspace-brand .brand-mark { color: var(--workspace-paper); background: #772630; }
+.workspace-brand .wordmark-period { color: #C6A66F; }
+.workspace-breadcrumb { color: #C3A99B; }
+.workspace-breadcrumb strong { color: var(--workspace-paper); }
+.workspace-status { border-color: rgba(242,231,216,.3); color: #E1CBB6; }
+.workspace-status .status-dot, .live-pill i { background: #C6A66F; }
+.workspace-intro { padding-top: 39px; }
+.workspace-intro .back-link { color: #C0A59A; }
+.workspace-intro .back-link:hover { color: #F2E7D8; }
+.workspace-intro .eyebrow { color: #C6A66F; }
+.workspace-intro h1 { color: #F2E7D8; }
+.workspace-intro h1 .serif-accent { color: #D1A1A0; }
+.workspace-lede { color: #C4AAA0; }
+.workspace-step { color: #BDA29A; border-color: rgba(242,231,216,.22); }
+.workspace-step b { color: #C6A66F; }
+.workspace-step.active { color: #271719; border-color: #C6A66F; background: #C6A66F; }
+.workspace-step.active b { color: #271719; }
+.workspace-grid { align-items: stretch; }
+.editor-panel, .preview-panel, .versions-panel { border-color: rgba(242,231,216,.23); background: #392025; color: #F2E7D8; }
+.editor-panel { padding: 28px; }
+.panel-index { border-color: rgba(242,231,216,.32); color: #C6A66F; }
+.panel-heading p, .preview-header > div > p, .versions-heading > div > p { color: #D3B4A8; }
+.panel-heading h2, .preview-header h2, .versions-heading h2 { color: #F2E7D8; }
+.editor-divider { border-color: rgba(242,231,216,.18); }
+.editor-field > label, .field-label-row label { color: #F2E7D8; }
+.field-label-row > span, .editor-field > label span { color: #C6A66F; }
+.editor-field textarea, .editor-field input:not([type="file"]) { border-color: rgba(242,231,216,.23); color: #28181A; background: #F2E7D8; }
+.editor-field textarea:focus, .editor-field input:not([type="file"]):focus { border-color: #C6A66F; box-shadow: 0 0 0 2px rgba(198,166,111,.15); }
+.field-footnote { color: #BDA39A; }
+.format-option, .direction-pick { color: #F2E7D8; border-color: rgba(242,231,216,.22); background: #47262B; }
+.format-option:hover, .direction-pick:hover { border-color: #C6A66F; }
+.format-option.selected { border-color: #C6A66F; background: #F2E7D8; color: #271719; box-shadow: 4px 4px 0 #772630; }
+.format-symbol, .symbol-book { color: #F2E7D8; background: #772630; }
+.symbol-deck { background: #8D5156; }
+.symbol-poster { color: #271719; background: #C6A66F; }
+.direction-pick.selected { border-color: #C6A66F; background: #F2E7D8; color: #271719; box-shadow: inset 4px 0 0 #772630; }
+.direction-pick strong { color: inherit; }
+.direction-pick small { color: #BDA39A; }
+.direction-pick.selected small { color: #755B55; }
+.direction-swatch { background: #C6A66F; }
+.swatch-archive { background: #C6A66F; }
+.swatch-archive i { background: #772630; }
+.swatch-archive i:nth-child(2) { background: #271719; }
+.swatch-archive i:nth-child(3) { background: #F2E7D8; }
+.swatch-electric { background: #35171C; }
+.swatch-electric i { background: #C6A66F; }
+.swatch-electric i:nth-child(2) { background: #F2E7D8; }
+.swatch-electric i:nth-child(3) { background: #772630; }
+.swatch-dreamy { background: #B67E80; }
+.swatch-dreamy i { background: #F2E7D8; }
+.swatch-dreamy i:nth-child(2) { background: #772630; }
+.swatch-dreamy i:nth-child(3) { background: #58634A; }
+.option-check { border-color: rgba(39,23,25,.4); }
+.format-option.selected .option-check, .direction-pick.selected .option-check { color: #F2E7D8; background: #35171C; border-color: #35171C; }
+.upload-dropzone { color: #F2E7D8; border-color: rgba(242,231,216,.35); background: #47262B; }
+.upload-dropzone:hover { border-color: #C6A66F; background: #523037; }
+.upload-icon { color: #F2E7D8; background: #772630; }
+.upload-dropzone small, .upload-action { color: #CBB1A5; }
+.upload-error { color: #ffb2a8; }
+.remove-image { color: #ddb078; }
+.editor-actions { border-top-color: rgba(242,231,216,.2); }
+.editor-actions > span { color: #BDA39A; }
+.editor-actions .button-dark { color: #F2E7D8; background: #772630; border-color: #9B555D; }
+.editor-actions .button-dark:hover { background: #9A3D46; }
+.preview-header h2 span { color: #C6A66F; }
+.live-pill { color: #D0B9AA; border-color: rgba(242,231,216,.24); }
+.preview-stage { background: #241417; }
+.preview-stage::before { background: rgba(140,57,66,.42); }
+.preview-stage .stage-ring { border-color: rgba(239,214,190,.23); }
+.stage-note { color: #271719; background: #F2E7D8; border-color: #271719; box-shadow: 3px 3px 0 #772630; }
+.mockup-book .book-paper { color: #2B171B; background: #D6BD96; background-image: repeating-linear-gradient(0deg, rgba(63,28,28,.03) 0 1px, transparent 1px 4px); }
+.mockup-symbol { color: #F2E7D8; background: #772630; }
+.mockup-deck .deck-stack-back { color: #F2E7D8; background: #772630; }
+.mockup-deck .deck-stack-front { color: #271719; background: #D6BD96; }
+.mockup-poster .poster-paper { background: #A96D72; }
+.palette-electric .book-paper, .palette-electric .poster-paper, .palette-electric .deck-stack-front { color: #F2E7D8; background: #4A2027; }
+.palette-electric .mockup-symbol { color: #271719; background: #C6A66F; }
+.palette-electric .mockup h3 em, .palette-electric .mockup p { color: #DCC2AA; }
+.palette-dreamy .book-paper, .palette-dreamy .poster-paper, .palette-dreamy .deck-stack-front { color: #271719; background: #C89A97; }
+.palette-dreamy .mockup-symbol { color: #F2E7D8; background: #772630; }
+.palette-dreamy .mockup h3 em, .palette-dreamy .mockup p { color: #57242C; }
+.print-note { background: #4A2A30; border: 1px solid rgba(242,231,216,.15); }
+.print-note p { color: #CDB6AB; }
+.print-note strong { color: #F2E7D8; }
+.preview-caption { color: #F2E7D8; }
+.preview-caption span:last-child { color: #C6A66F; }
+.versions-heading h2 span { color: #C6A66F; }
+.compare-button, .quiet-button { color: #F2E7D8; border-color: rgba(242,231,216,.25); }
+.compare-button:hover:not(:disabled), .quiet-button:hover { background: #4A2A30; border-color: #C6A66F; }
+.versions-empty { background: #47262B; }
+.versions-empty p { color: #D5BDB1; }
+.versions-empty strong { color: #F2E7D8; }
+.version-tile, .compare-grid > div { color: #F2E7D8; border-color: rgba(242,231,216,.2); background: #47262B; }
+.version-tile-art, .compare-grid .mockup-compact { background: #241417; }
+.version-tile-meta, .compare-grid small { color: #C6A99B; }
+.version-tile .quiet-button { color: #F2E7D8; }
+.compare-panel { border-top-color: rgba(242,231,216,.2); }
+.compare-panel-title { color: #C6A66F; }
+.versions-disclaimer { color: #BDA39A; }
+.workspace-footer { color: #F2E7D8; border-top-color: rgba(242,231,216,.22); background: #35171C; }
+.workspace-footer .workspace-brand { color: #F2E7D8; }
+.workspace-footer > span { color: #C6A99B; }
+.workspace-footer > a:last-child { color: #F2E7D8; }
+@media (max-width: 780px) {
+  .workspace-topbar { background: #35171C; }
+  .workspace-intro { padding-top: 28px; }
+  .workspace-grid { grid-template-columns: minmax(0,1fr); }
+  .editor-panel { grid-row: 2; }
+  .preview-column { grid-row: 1; }
+  .editor-panel, .preview-panel, .versions-panel { padding: 17px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .workspace-shell .format-option, .workspace-shell .direction-pick { transition: background .2s ease, border-color .2s ease, transform .2s ease; }
+  .workspace-shell .format-option:hover, .workspace-shell .direction-pick:hover { transform: translateY(-1px); }
+}

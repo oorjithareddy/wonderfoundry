@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-labelledby="t"><title id="t">Wild bloom botanical poster</title>
+<defs><linearGradient id="paper" x2=".9" y2="1"><stop stop-color="#eee0c8"/><stop offset="1" stop-color="#c5a58b"/></linearGradient><pattern id="spots" width="58" height="71" patternUnits="userSpaceOnUse"><ellipse cx="13" cy="13" rx="5" ry="8" fill="#4a2025"/><ellipse cx="41" cy="37" rx="6" ry="11" fill="#6d2c32"/><ellipse cx="19" cy="60" rx="4" ry="7" fill="#3c2022"/><ellipse cx="13" cy="13" rx="2" ry="4" fill="#d0ad82"/><ellipse cx="41" cy="37" rx="2" ry="5" fill="#d0ad82"/></pattern><g id="petal"><path d="M0 0C-46-25-40-71-14-82C9-62 24-25 0 0" fill="#87323d" stroke="#e0bca4" stroke-width="2"/></g></defs>
+<rect width="600" height="800" fill="#d9c4a8"/><rect x="17" y="17" width="566" height="766" fill="none" stroke="#6e252e" stroke-width="2"/>
+<rect x="31" y="31" width="538" height="738" fill="url(#spots)" opacity=".27"/>
+<text x="45" y="67" font-size="13" font-family="Arial,sans-serif" font-weight="700" letter-spacing="4" fill="#4a2025">FIELD NOTES FROM SOMEWHERE ELSE</text>
+<text x="41" y="169" font-family="Georgia,serif" font-size="82" fill="#6f202c" font-weight="700" letter-spacing="-7">WILD</text>
+<text x="43" y="227" font-family="Georgia,serif" font-size="64" fill="#241315" font-style="italic" letter-spacing="-3">by nature.</text>
+<g transform="translate(307 481)">
+ <g transform="rotate(0)"><use href="#petal"/></g><g transform="rotate(45)"><use href="#petal"/></g><g transform="rotate(90)"><use href="#petal"/></g><g transform="rotate(135)"><use href="#petal"/></g><g transform="rotate(180)"><use href="#petal"/></g><g transform="rotate(225)"><use href="#petal"/></g><g transform="rotate(270)"><use href="#petal"/></g><g transform="rotate(315)"><use href="#petal"/></g><circle r="38" fill="#d0ad82" stroke="#4a2025" stroke-width="3"/><circle r="17" fill="#4a2025"/>
+</g>
+<path d="M307 512Q295 614 349 668M294 560Q225 546 190 600M327 586Q392 567 431 603" fill="none" stroke="#4b5740" stroke-width="7" stroke-linecap="round"/>
+<path d="M242 571q-69-37-93 2q51 34 93-2M361 622q59-45 85-6q-43 39-85 6M316 632q-15 53 18 76q17-45-18-76" fill="#56634a"/>
+<text x="44" y="716" font-family="Georgia,serif" font-size="29" font-style="italic" fill="#4a2025">A study in strange things.</text>
+<text x="44" y="750" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="3" fill="#6f202c">GROW YOUR OWN KIND OF MAGIC</text>
+</svg>
