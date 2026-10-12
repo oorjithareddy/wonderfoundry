@@ -47,7 +47,7 @@ export default function Home() {
           <a href="#explore">Explore ideas</a>
           <a href="#how-it-works">How it works</a>
         </nav>
-        <a className="header-cta" href="#idea-lab">Make a thing <span aria-hidden="true">↗</span></a>
+        <a className="header-cta" href="/make">Make a thing <span aria-hidden="true">↗</span></a>
       </header>
 
       <section className="hero section-wrap" id="top" aria-labelledby="hero-title">
@@ -56,7 +56,7 @@ export default function Home() {
           <h1 id="hero-title">Make it strange.<br />Make it <span className="highlight-word">yours<span className="scribble" aria-hidden="true">〰</span></span></h1>
           <p className="hero-description">Your best ideas are too personal for a template. Turn your memories, inside jokes and beautifully weird thoughts into real things you can hold.</p>
           <div className="hero-actions">
-            <a className="button button-dark" href="#idea-lab">Start with an idea <span aria-hidden="true">↗</span></a>
+            <a className="button button-dark" href="/make">Start with an idea <span aria-hidden="true">↗</span></a>
             <a className="text-link" href="#explore">Wander around first <span aria-hidden="true">↓</span></a>
           </div>
           <div className="hero-note"><span className="note-star" aria-hidden="true">✳</span><span>Made from your imagination.<br /><strong>Not another off-the-shelf gift.</strong></span></div>
@@ -103,7 +103,7 @@ export default function Home() {
               <p className="creation-category">{creation.category}</p>
               <h3>{creation.title}</h3>
               <p className="creation-description">{creation.description}</p>
-              <a className="card-link" href="#idea-lab">Start here <span aria-hidden="true">↗</span></a>
+              <a className="card-link" href="/make">Start here <span aria-hidden="true">↗</span></a>
             </article>
           ))}
         </div>
