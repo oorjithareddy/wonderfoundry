@@ -27,7 +27,7 @@ export default function Home() {
           <span className="wf-brand-stamp" aria-hidden="true">✳</span><span>wonderfoundry<span className="wf-brand-period">®</span></span>
         </a>
         <button className="wf-menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="wf-navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "CLOSE −" : "MENU +"}</button>
-        <nav className={"wf-nav " + (menuOpen ? "is-open" : "")} id="wf-navigation" aria-label="Main navigation">
+        <nav className={`wf-nav ${menuOpen ? "is-open" : ""}`} id="wf-navigation" aria-label="Main navigation">
           <a href="#archive">The oddity archive</a><a href="#idea-lab">The making room</a><a className="wf-nav-cta" href="/make">MAKE A THING <span aria-hidden="true">↗</span></a>
         </nav>
       </header>
@@ -61,12 +61,12 @@ export default function Home() {
         <div className="wf-section-top"><div><p className="wf-kicker"><span className="wf-kicker-line" /> THE ODDITY ARCHIVE / VOL. 001</p><h2 id="wf-archive-title">Keep the<br /><em>weird bits.</em></h2></div><div className="wf-archive-intro"><p>Think newspaper clipping, record sleeve, field notes, a poster from an imaginary film. Not a fixed catalogue. A pile of good starting points.</p><span>THE ARCHIVE IS OPEN <b aria-hidden="true">↘</b></span></div><RetroSticker kind="bow" className="archive-bow" /></div>
         <div className="wf-pinboard">
           {posters.map((poster) => (
-            <article key={poster.id} className={"pin pin-" + poster.id}>
+            <article key={poster.id} className={`pin pin-${poster.id}`}>
               <div className="pin-paper-edge"><div className="pin-meta"><span>WF / {poster.number}</span><span>{poster.format}</span></div>
-                <a href="/make" className="pin-art" aria-label={"Start creating: " + poster.title}><Image src={poster.image} alt={"Original illustration: " + poster.title} width={700} height={900} loading="lazy" /><span className="pin-art-cta" aria-hidden="true">↗ MAKE IT YOURS</span></a>
+                <a href="/make" className="pin-art" aria-label={`Start creating: ${poster.title}`}><Image src={poster.image} alt={`Original illustration: ${poster.title}`} width={700} height={900} loading="lazy" /><span className="pin-art-cta" aria-hidden="true">↗ MAKE IT YOURS</span></a>
                 <div className="pin-caption"><p>{poster.label}</p><h3>{poster.title}</h3><span>{poster.body}</span></div><a className="pin-print-link" href="/make">MAKE YOUR OWN <span aria-hidden="true">↗</span></a>
               </div>
-              <RetroSticker kind={poster.sticker} className={"pin-sticker pin-sticker-" + poster.id} /><span className="pin-index" aria-hidden="true">({poster.number})</span>
+              <RetroSticker kind={poster.sticker} className={`pin-sticker pin-sticker-${poster.id}`} /><span className="pin-index" aria-hidden="true">({poster.number})</span>
             </article>
           ))}
           <aside className="press-scrap" aria-label="A fictional newspaper clipping"><div className="press-scrap-header"><span>THE WONDERFOUNDRY GAZETTE</span><span>NO. 07</span></div><strong>LOCAL PERSON<br />BECOMES<br /><em>THE WHOLE STORY.</em></strong><div className="press-scrap-columns"><i /><i /><i /><i /></div><span className="press-scrap-footer">EXTRA! EXTRA! THE LORE IS REAL.</span></aside>
