@@ -42,14 +42,14 @@ npm run typecheck
 npm run build
 ```
 
-The current homepage includes a front-end-only idea launcher. It does not call an AI model, save designs to a database, or create orders. This is intentional: validate the experience before adding paid services.
+The homepage and creative workspace are front-end prototypes. They do not call an AI model, save designs to a database, or create orders. The print-aware model provides provisional working sizes, 300 DPI canvas estimates, brief/image checks, and a product-only burgundy theme profile. It does not create print-ready files: dimensions, bleed, colour, stock, binding and export templates must be verified with the selected vendor. Uploaded artwork is kept as reference material and is not automatically placed into products.
 
 ## Build sequence
 
 1. Establish project conventions and the visual direction.
 2. Build the home page and playful discovery experience.
 3. Build the creative workspace: idea input, creative directions, asset upload, revision history, version comparison, and physical-product preview. Start with deterministic demo behaviour.
-4. Add print-safe document models and validation.
+4. Add print-aware product data, provisional size/bleed/safe-area calculations, and validation tests. Dimensions stay unverified until a specific printer is selected.
 5. Add persistence, authentication, saved designs, and secure file storage.
 6. Add checkout and payment handling with verified webhooks and failure recovery.
 7. Integrate print-on-demand and shipping providers behind adapters, after testing APIs and physical samples.
