@@ -21,7 +21,13 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "preset": "recommended"
+      "preset": "recommended",
+      "complexity": {
+        "noImportantStyles": "off"
+      },
+      "style": {
+        "noDescendingSpecificity": "off"
+      }
     }
   },
   "javascript": {
@@ -35,16 +41,6 @@
   "css": {
     "parser": {
       "tailwindDirectives": true
-    },
-    "linter": {
-      "rules": {
-        "complexity": {
-          "noImportantStyles": "off"
-        },
-        "style": {
-          "noDescendingSpecificity": "off"
-        }
-      }
     }
   }
 }
